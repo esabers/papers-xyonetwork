@@ -165,15 +165,21 @@ The first type of staking is called \textit{Network Staking}. This comprises the
 
 Once you execute a Network Stake, you lock your XYO in the XYO Network ecosystem and can transfer the XYO between your own XYO nodes at any time. However, you cannot withdraw your XYO until the Network Stake Period has ended.\\
 
-This results in increased reward multiples whenever one pays for the bound witness data you generate.\\
-
-The minimum Network Stake Period is 12 months, although we recommend staking for much longer than that if you plan to hold XYO for the long-term.\\
-
-Below is the Comparison of Reward Values for Network Staking: (Green is 5 years)
-
-\includegraphics[width=\textwidth]{staking-time}
+The Network Stake Period can be selected when initially staking your XYO tokens. This longer this the Network Stake Period, the greater it's compounding interest will be. The amount of stake you have determines the proportion of the mining pool you obtain daily.\\
 
 
+
+Below is the comparison of the value of stakes for two examples of an initial 1000 XYO staked for 10 years. The blue line represents a staking period of 1 year, repeatedly staked 10 times, thus allowing the owner to redeem their XYO 10 different times. The green line represents a single Network Stake Period of 10 years, not allowing the owner to redeem it until the end of the 10 years. It is clear that the longer one initially commits to the length of their stake, the more valuable it will become.
+
+\includegraphics[width=\textwidth]{StakingAlgorithm.pdf}
+\\\\
+
+This is generated from the equation below:
+\begin{align}
+    Value &= stake(1+r)^{t/365}\\
+    r &= \frac{\sqrt{N}}{\alpha}
+\end{align}
+where $t$ is the amount of time the stake has been locked in, $N$ is the Network Staking Period, and $\alpha$ is an adjustable scaling constant ($\alpha = 25$ in the plot above).
 
 \subsubsection{Node Staking}
 
